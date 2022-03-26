@@ -8,19 +8,52 @@ export default function ProductComponent() {
       {products.map((product) => {
         const { id, title, image, price, category } = product;
         return (
-          <div
-            className="four wide stackable column"
-            // style={{ display: 'flex', alignItems: 'stretch' }}
-            key={id}>
+          <div className="four wide stackable column" key={id}>
             <div className="ui link cards">
               <div className="card">
-                <div className="image">
-                  <img src={image} alt={title} />
+                <div
+                  className="image"
+                  style={{
+                    background: 'white',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    padding: '1rem',
+                  }}>
+                  <img
+                    src={image}
+                    alt={title}
+                    style={{
+                      height: '120px',
+                      maxHeight: '200px',
+                      width: 'auto',
+                      maxWidth: '200px',
+                    }}
+                  />
                 </div>
-                <div className="content">
-                  <div className="header">{title}</div>
-                  <div className="meta price">$ {price}</div>
-                  <div className="meta">{category}</div>
+                <div
+                  className="content"
+                  style={{
+                    height: '10rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                  }}>
+                  <div className="header" style={{ fontSize: '14px' }}>
+                    {title}
+                  </div>
+                  <div
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      marginBottom: '0',
+                    }}>
+                    <div className="meta price" style={{ alignSelf: 'flex-end' }}>
+                      $ {price}
+                    </div>
+                    <div className="meta" style={{ alignSelf: 'flex-end' }}>
+                      {category}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
